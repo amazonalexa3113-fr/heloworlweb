@@ -186,3 +186,18 @@ section,
   overflow: visible !important;
   position: static !important;
 }
+
+#URLBox {
+  width: 500px;
+  height: 10px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #0f0f0f;
+  color: #ffffff;
+}
+
+#URLEnt {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-size: 20px;
+}

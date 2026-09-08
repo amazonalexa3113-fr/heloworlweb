@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>heloworlweb: silly.html</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>hi hello</h1>
+      <nav>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="previews.html">previews</a>
+        <a href="social.html">social medias</a>
+        <a href="news.html">news</a>
+        <a href="updates.html">updates</a>
+        <a href="collection.html">collections</a>
+        <a href="funfacts.html">fun facts</a>
+      </nav>
+    </header>
+
+    <h1></h1>
+
+    <h2>silly search engine lmfaooo</h2>
+    <input type="text" placeholder="URL" id="URLBox" />
+    <button id="URLEnt">lessgo</button>
+
+    <script>
+      const URLBox = document.getElementById("URLBox");
+      const URLEnt = document.getElementById("URLEnt");
+
+      // Remember the last URL
+      const savedURL = localStorage.getItem("sillyURL");
+
+      if (savedURL) {
+        URLBox.value = savedURL;
+      }
+
+      function getURL() {
+        let url = URLBox.value.trim();
+
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+          url = "https://" + url;
+        }
+
+        return url;
+      }
+
+      // Enter = open in the same tab
+      URLBox.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          const url = getURL();
+
+          localStorage.setItem("sillyURL", url);
+
+          window.open(url, "_blank");
+        }
+      });
+
+      // lessgo = open in a new tab
+      URLEnt.addEventListener("click", () => {
+        const url = getURL();
+
+        localStorage.setItem("sillyURL", url);
+
+        window.open(url, "_blank");
+      });
+    </script>
+  </body>
+</html>
