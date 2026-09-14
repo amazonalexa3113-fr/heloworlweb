@@ -201,3 +201,25 @@ section,
   color: #ffffff;
   font-size: 20px;
 }
+
+#showheader {
+  position: sticky;
+  top: 25px;
+  background-color: #1a1a1a;
+  border: #000000;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  width: 10%;
+}
+
+#hideheader {
+  display: block;
+  margin: 0 auto;
+  position: sticky;
+  top: 25px;
+  background-color: #000000;
+  border: #000000;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  width: 7%;
+}
