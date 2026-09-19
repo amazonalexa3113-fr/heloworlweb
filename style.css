@@ -223,3 +223,49 @@ section,
   font-family: "Times New Roman", Times, serif;
   width: 7%;
 }
+
+
+
+#32bit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#bitDisplay {
+  display: grid;
+  grid-template-columns: repeat(8, 30px);
+  grid-template-rows: repeat(4, 30px);
+  gap: 5px;
+
+  width: max-content;
+  margin: 0 auto;
+}
+
+.bit {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #888;
+  box-sizing: border-box;
+
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.bit.zero {
+  background: black;
+  color: white;
+}
+
+.bit.one {
+  background: white;
+  color: black;
+}
+
+#bitStatus {
+  font-family: monospace;
+}

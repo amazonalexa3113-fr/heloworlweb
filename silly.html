@@ -30,6 +30,18 @@
     <input type="text" placeholder="URL" id="URLBox" />
     <button id="URLEnt">lessgo</button>
 
+    <div>
+      <p style="color: #373737">the secret lies on the <em>fun facts page...</em></p>
+    </div>
+
+    <!-- 32 bits, every millisecond a random bit will turn 1 or 0, if every bits turn 1, you win -->
+    <div id="32bit"></div>
+
+    <div id="secret32bitfile">
+      <h1></h1>
+      <a href="files/secret/sector" download>secret file</a>
+    </div>
+
     <script>
       const URLBox = document.getElementById("URLBox");
       const URLEnt = document.getElementById("URLEnt");
@@ -51,9 +63,20 @@
         return url;
       }
 
-      // Enter = open in the same tab
+      // enter = open in the same tab
       URLBox.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
+          const input = URLBox.value.trim();
+
+          // SECRET 32-BIT GAMBLING MACHINE
+          if (input.toLowerCase() === "32bit") {
+            event.preventDefault();
+
+            window.start32Bit();
+
+            return;
+          }
+
           const url = getURL();
 
           localStorage.setItem("sillyURL", url);
@@ -64,6 +87,13 @@
 
       // lessgo = open in a new tab
       URLEnt.addEventListener("click", () => {
+        const input = URLBox.value.trim();
+
+        if (input.toLowerCase() === "32bit") {
+          window.start32Bit();
+          return;
+        }
+
         const url = getURL();
 
         localStorage.setItem("sillyURL", url);
@@ -74,4 +104,5 @@
   </body>
 
   <script src="files/js/navigation_bar_shower.js"></script>
+  <script src="files/js/32bit.js"></script>
 </html>
