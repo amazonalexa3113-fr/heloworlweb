@@ -8,101 +8,38 @@
   </head>
   <body>
     <header id="navigationbar">
-      <h1>hi hello</h1>
+      <h1>hi xin chào</h1>
       <nav>
-        <a href="index.html">home</a>
-        <a href="about.html">about</a>
-        <a href="previews.html">previews</a>
-        <a href="social.html">social medias</a>
-        <a href="news.html">news</a>
-        <a href="updates.html">updates</a>
-        <a href="collection.html">collections</a>
-        <a href="funfacts.html">fun facts</a>
+        <a href="index.html">trang chủ</a> <a href="about.html">giới thiệu</a>
+        <a href="previews.html">xem trước</a>
+        <a href="social.html">mạng xã hội</a> <a href="news.html">tin tức</a>
+        <a href="updates.html">cập nhật</a>
+        <a href="collection.html">bộ sưu tập</a>
+        <a href="funfacts.html">sự thật thú vị</a>
       </nav>
-      <button id="hideheader">hide this bar</button>
+      <button id="hideheader">ẩn thanh này</button>
     </header>
-
-    <button id="showheader">show navigation bar</button>
-
+    <button id="showheader">hiện thanh điều hướng</button>
     <h1></h1>
-
-    <h2>silly search engine lmfaooo</h2>
+    <h2>công cụ tìm kiếm linh tinh lmfaooo</h2>
     <input type="text" placeholder="URL" id="URLBox" />
     <button id="URLEnt">lessgo</button>
-
     <div>
-      <p style="color: #373737">the secret lies on the <em>fun facts page...</em></p>
+      <p style="color: #373737">
+        bí mật nằm ở <em>trang sự thật thú vị...</em>
+      </p>
     </div>
-
     <!-- 32 bits, every millisecond a random bit will turn 1 or 0, if every bits turn 1, you win -->
     <div id="32bit"></div>
-
     <div id="secret32bitfile">
       <h1></h1>
-      <a href="files/secret/sector" download>secret file</a>
+      <a href="files/secret/sector" download>file bí mật</a>
     </div>
-
     <script>
       const URLBox = document.getElementById("URLBox");
-      const URLEnt = document.getElementById("URLEnt");
-
-      // Remember the last URL
-      const savedURL = localStorage.getItem("sillyURL");
-
-      if (savedURL) {
-        URLBox.value = savedURL;
-      }
-
-      function getURL() {
-        let url = URLBox.value.trim();
-
-        if (!url.startsWith("http://") && !url.startsWith("https://")) {
-          url = "https://" + url;
-        }
-
-        return url;
-      }
-
-      // enter = open in the same tab
-      URLBox.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          const input = URLBox.value.trim();
-
-          // SECRET 32-BIT GAMBLING MACHINE
-          if (input.toLowerCase() === "32bit") {
-            event.preventDefault();
-
-            window.start32Bit();
-
-            return;
-          }
-
-          const url = getURL();
-
-          localStorage.setItem("sillyURL", url);
-
-          window.open(url, "_blank");
-        }
-      });
-
-      // lessgo = open in a new tab
-      URLEnt.addEventListener("click", () => {
-        const input = URLBox.value.trim();
-
-        if (input.toLowerCase() === "32bit") {
-          window.start32Bit();
-          return;
-        }
-
-        const url = getURL();
-
-        localStorage.setItem("sillyURL", url);
-
-        window.open(url, "_blank");
-      });
+      const URLEnt = document.getElementById("URLEnt"); // Remember the last URL const savedURL = localStorage.getItem("sillyURL"); if (savedURL) { URLBox.value = savedURL; } function getURL() { let url = URLBox.value.trim(); if (!url.startsWith("http://") && !url.startsWith("https://")) { url = "https://" + url; } return url; } // enter = open in the same tab URLBox.addEventListener("keydown", function (event) { if (event.key === "Enter") { const input = URLBox.value.trim(); // SECRET 32-BIT GAMBLING MACHINE if (input.toLowerCase() === "32bit") { event.preventDefault(); window.start32Bit(); return; } const url = getURL(); localStorage.setItem("sillyURL", url); window.open(url, "_blank"); } }); // lessgo = open in a new tab URLEnt.addEventListener("click", () => { const input = URLBox.value.trim(); if (input.toLowerCase() === "32bit") { window.start32Bit(); return; } const url = getURL(); localStorage.setItem("sillyURL", url); window.open(url, "_blank"); });
     </script>
   </body>
-
   <script src="files/js/navigation_bar_shower.js"></script>
   <script src="files/js/32bit.js"></script>
 </html>
