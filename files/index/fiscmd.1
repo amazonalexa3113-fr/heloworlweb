@@ -1,0 +1,68 @@
+.TH FISCMD 1 "sep 2026" "fiscmd v1.9beta" "user commands for fiscmd"
+
+.SH NAME
+fiscmd - a silly little command-line shell and filesystem utility
+
+.SH SYNOPSIS
+.B fiscmd
+.RI [ options ]
+.br
+.B fiscmd -c
+.RI command
+.br
+.B fiscmd -a
+.RI alias
+
+.SH DESCRIPTION
+.B fiscmd
+is a silly little console app that you can use and mess with :D
+
+.SH OPTIONS
+.TP
+.BR -h ", " --help
+show this help
+
+.TP
+.BR -v ", " --version
+show the current version of ts
+
+.TP
+.BR -c ", " --command
+execute any command fiscmd currently has
+
+.TP
+.BR -a ", " --alias
+add an alias
+
+.TP
+.BR -nc ", " --no-color
+toggle no color mode (add -c next to it to execute commands like normal)
+
+.TP
+.BR -tc ", " --true-color
+toggle true color mode (16 million color experience, add -c next to it to execute commands like normal)
+
+.TP
+.BR -q ", " --quit
+do nothing, in fact... this command is a ragebait :skull:
+
+.SH EXAMPLES
+.nf
+fiscmd
+fiscmd -h
+fiscmd -v
+fiscmd -c "ver"
+fiscmd -tc -c initfis animate
+.fi
+
+.SH FILES
+.I /usr/bin/fiscmd
+.br
+the fiscmd executable
+
+.SH AUTHOR
+sWindow
+
+.SH SEE ALSO
+.BR ls (1),
+.BR fish (1)
