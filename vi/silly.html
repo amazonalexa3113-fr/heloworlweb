@@ -37,7 +37,62 @@
     </div>
     <script>
       const URLBox = document.getElementById("URLBox");
-      const URLEnt = document.getElementById("URLEnt"); // Remember the last URL const savedURL = localStorage.getItem("sillyURL"); if (savedURL) { URLBox.value = savedURL; } function getURL() { let url = URLBox.value.trim(); if (!url.startsWith("http://") && !url.startsWith("https://")) { url = "https://" + url; } return url; } // enter = open in the same tab URLBox.addEventListener("keydown", function (event) { if (event.key === "Enter") { const input = URLBox.value.trim(); // SECRET 32-BIT GAMBLING MACHINE if (input.toLowerCase() === "32bit") { event.preventDefault(); window.start32Bit(); return; } const url = getURL(); localStorage.setItem("sillyURL", url); window.open(url, "_blank"); } }); // lessgo = open in a new tab URLEnt.addEventListener("click", () => { const input = URLBox.value.trim(); if (input.toLowerCase() === "32bit") { window.start32Bit(); return; } const url = getURL(); localStorage.setItem("sillyURL", url); window.open(url, "_blank"); });
+      const URLEnt = document.getElementById("URLEnt");
+
+      // Remember the last URL
+      const savedURL = localStorage.getItem("sillyURL");
+
+      if (savedURL) {
+        URLBox.value = savedURL;
+      }
+
+      function getURL() {
+        let url = URLBox.value.trim();
+
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+          url = "https://" + url;
+        }
+
+        return url;
+      }
+
+      // enter = open in the same tab
+      URLBox.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          const input = URLBox.value.trim();
+
+          // SECRET 32-BIT GAMBLING MACHINE
+          if (input.toLowerCase() === "32bit") {
+            event.preventDefault();
+
+            window.start32Bit();
+
+            return;
+          }
+
+          const url = getURL();
+
+          localStorage.setItem("sillyURL", url);
+
+          window.open(url, "_blank");
+        }
+      });
+
+      // lessgo = open in a new tab
+      URLEnt.addEventListener("click", () => {
+        const input = URLBox.value.trim();
+
+        if (input.toLowerCase() === "32bit") {
+          window.start32Bit();
+          return;
+        }
+
+        const url = getURL();
+
+        localStorage.setItem("sillyURL", url);
+
+        window.open(url, "_blank");
+      });
     </script>
   </body>
   <script src="../files/js/navigation_bar_shower.js"></script>
