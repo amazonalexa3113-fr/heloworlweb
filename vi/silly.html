@@ -29,7 +29,7 @@
         bí mật nằm ở <em>trang sự thật thú vị...</em>
       </p>
     </div>
-    <!-- 32 bits, every millisecond a random bit will turn 1 or 0, if every bits turn 1, you win -->
+    <!-- 32 bit, cứ mỗi mili giây một bit ngẫu nhiên sẽ thành 1 hoặc 0, nếu tất cả các bit đều thành 1, bạn thắng -->
     <div id="32bit"></div>
     <div id="secret32bitfile">
       <h1></h1>
@@ -39,7 +39,7 @@
       const URLBox = document.getElementById("URLBox");
       const URLEnt = document.getElementById("URLEnt");
 
-      // Remember the last URL
+      // Nhớ URL cuối cùng
       const savedURL = localStorage.getItem("sillyURL");
 
       if (savedURL) {
@@ -56,12 +56,12 @@
         return url;
       }
 
-      // enter = open in the same tab
+      // enter = mở trong tab hiện tại
       URLBox.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
           const input = URLBox.value.trim();
 
-          // SECRET 32-BIT GAMBLING MACHINE
+          // MÁY ĐÁNH BẠC 32-BIT BÍ MẬT
           if (input.toLowerCase() === "32bit") {
             event.preventDefault();
 
@@ -78,7 +78,7 @@
         }
       });
 
-      // lessgo = open in a new tab
+      // lessgo = mở trong tab mới
       URLEnt.addEventListener("click", () => {
         const input = URLBox.value.trim();
 
@@ -96,5 +96,5 @@
     </script>
   </body>
   <script src="../files/js/navigation_bar_shower.js"></script>
-  <script src="../files/js/32bit.js"></script>
+  <script src="../files/js/32bitvn.js"></script>
 </html>
