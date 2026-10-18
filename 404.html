@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>heloworl: 404</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header id="navigationbar">
+      <h1>hi hello</h1>
+      <nav>
+        <a href="index.html" data-en="go home bro" data-vi="về nhà"
+          >go home bro</a
+        >
+      </nav>
+      <button id="hideheader" data-en="hide this bar" data-vi="ẩn thanh này">
+        hide this bar
+      </button>
+    </header>
+    <button id="showheader" data-en="show navigation bar" data-vi="hiện thanh nảy">show navigation bar</button>
+
+    <h1 id="heading">404 error:</h1>
+    <h2 id="message">why did you type a nonexistent page in the address bar</h2>
+
+    <script>
+      const heading = document.querySelector("#heading");
+      const message = document.querySelector("#message");
+
+      const vietnamese =
+        window.location.pathname.includes("/vi/") ||
+        new URLSearchParams(window.location.search).get("lang") === "vi";
+
+      if (vietnamese) {
+        document.documentElement.lang = "vi";
+
+        heading.textContent = "Lỗi 404:";
+        message.textContent = "Ai hỏi mày đi nhập trang tui không tạo";
+
+        document.querySelectorAll("[data-en][data-vi]").forEach((element) => {
+          element.textContent = element.dataset.vi;
+        });
+
+        document.querySelector("#navigationbar h1").textContent = "xin chào";
+      }
+    </script>
+
+    <script src="files/js/navigation_bar_shower.js"></script>
+  </body>
+</html>

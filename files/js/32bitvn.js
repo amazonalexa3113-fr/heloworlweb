@@ -159,6 +159,8 @@ function start32Bit() {
 
     document.getElementById("bitStatus").textContent =
       "bạn đã thắng rồi, giờ làm gì đây";
+    
+    secretfile.style.display = "block";
 
     return;
   }

@@ -160,6 +160,7 @@ function start32Bit() {
     document.getElementById("bitStatus").textContent =
       "you already won, what now";
 
+      secretfile.style.display = "block";
     return;
   }
 
